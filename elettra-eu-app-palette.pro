@@ -21,6 +21,7 @@ isEmpty(prefix) {
 }
 
 exists($${INSTALL_ROOT}/include/cumbia-qtcontrols/cumbia-qtcontrols.pri) {
+    SHAREDIR=$${INSTALL_ROOT}/share/cuepalette
     DOCDIR=$${INSTALL_ROOT}/share/doc/elettra.eu.app-palette
 	INC_DIR=$${INSTALL_ROOT}/include/cumbia-qtcontrols
 	include($${INC_DIR}/cumbia-qtcontrols.pri)
@@ -55,7 +56,8 @@ HEADERS += \
 
 TARGET = bin/dummy
 
-DISTFILES += README.md
+DISTFILES += README.md \
+    share/qumbiaprojectwizard-palette-snippet.h
 
 doc.commands = \
 doxygen \
@@ -70,4 +72,7 @@ target.path = /tmp
 inc.path = $${CUMBIA_QTCONTROLS_INCLUDES}
 inc.files = $${HEADERS}
 
-INSTALLS += inc
+share.path = $${SHAREDIR}/cuepalette
+share.files = share/qumbiaprojectwizard-palette-snippet.h
+
+INSTALLS += inc share
