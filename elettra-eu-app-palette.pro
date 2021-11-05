@@ -69,7 +69,7 @@ QMAKE_EXTRA_TARGETS += doc
 
 target.path = /tmp
 
-inc.path = $${CUMBIA_QTCONTROLS_INCLUDES}
+inc.path = $${INC_DIR}
 inc.files = $${HEADERS}
 
 share.path = $${SHAREDIR}/cuepalette
